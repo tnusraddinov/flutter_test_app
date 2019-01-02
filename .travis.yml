@@ -31,6 +31,7 @@ matrix:
     - env: JOB=APK
       os:
         - linux
+      language: generic
       sudo: false
       addons:
         apt:
@@ -44,7 +45,7 @@ matrix:
         - git clone https://github.com/flutter/flutter.git -b beta
         - ./flutter/bin/flutter doctor
       script:
-        - ./flutter/bin/flutter test
+        - ./flutter/bin/flutter -v build apk
       
     # Builds an IPA.
     - env: JOB=IPA
